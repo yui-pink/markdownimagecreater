@@ -74,14 +74,15 @@
 
         setText.innerText = sentences.forEach(function(value) {
           //setText.innerHTML = value;
-          document.write(value);//ここをdocument.writeじゃなくinnerHTMLにしたい
+          setText.insertAdjacentHTML('beforebegin', value);
+          //document.write(value);//ここをdocument.writeじゃなくinnerHTMLにしたい
         });
       }
     </script>
     <link rel="stylesheet" href="/css/markdownbase.css">
   </head>
   <body>
-    <div id="markdown">ここにMarkDownが表示されます</div>
+    <div id="markdown"></div>
     <form name="" id="content" method="post" action="/">
       <textarea rows="90" cols="80" id="text" value=""></textarea>
       <input type="button" value="MarkDownを反映" onclick="createSentence();">
